@@ -1,0 +1,22 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t dockercicddemo -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true dockercicddemo npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: $ACCESS_KEY_ID
+  secret_access_key:
+    secure: "$SECRET_ACCESS_KEY"
+  region: "us-east-1"
+  app: "docker-cicd-demo"
+  env: "DockerCicdDemo-env"
+  bucket_name: "the-target-S3-bucket"
+  bucket_path: "docker-cicd-demo"
+  on:
+    branch: master
