@@ -16,7 +16,7 @@ deploy:
   region: "us-east-1"
   app: "docker-cicd-demo"
   env: "DockerCicdDemo-env"
-  bucket_name: "the-target-S3-bucket"
+  bucket_name: "elasticbeanstalk-us-east-1-801399982172"
   bucket_path: "docker-cicd-demo"
   on:
     branch: master
