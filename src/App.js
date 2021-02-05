@@ -7,7 +7,7 @@ function App() {
       <header className='App-header'>
         <img src={logo} className='App-logo' alt='logo' />
         <p>
-          Edi t <code>src/App.js</code> and save to kkk reload.
+          Edi t <code>src/App.js</code> and save to Deployed ...
         </p>
         <a
           className='App-link'
